@@ -1,0 +1,115 @@
+body{
+    background-image: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background{
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.change{
+    border-radius: 30px;
+    padding: 0, 10px;
+}
+.navbar{
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    border: 3.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0); /* Set the desired opacity value */
+    margin: 20px;
+    /* background-image: url(./images/background.png);
+    background-size: cover;
+    #0b363c */
+} 
+/* #134B70 */
+.container-fluid{
+    color: #ffffff;
+}
+.col{
+    border-radius: 15px;
+}
+/* #79C4F2 */
+/* #6cf0faee */
+.card{
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #0099990d; */
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 3);
+    /* height: 340px; */
+    margin-bottom: 20px;
+}
+.card-img-top{
+    padding: 4px;
+    border-radius: 20px;
+    height: 220px;
+}
+.DATE{
+    color: #ffffff;
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+.card-title{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bolder;
+}
+.atag{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.blog{
+    position: relative;
+    top: 60px;
+    height: fit-content;
+    width: 500px;
+    border-radius: 20px;
+    /* border: 3px solid white; rgba(255, 255, 255, 0.18)*/
+    color: white;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 1.8);
+    border: 3.5px solid rgba(255, 255, 255, 0.756);
+}
+
+.signin{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 100px;
+    height: fit-content;
+    width: 500px;
+    border-radius: 20px;
+    /* border: 3px solid white; */
+    color: white;
+    /* box-shadow: 4px 4px 9px rgba(0, 0, 0, 1.8); */
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 1.8);
+    border: 3.5px solid rgba(255, 255, 255, 0.756);
+}
+
+.signup{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 85px;
+    height: fit-content;
+    width: 500px;
+    border-radius: 20px;
+    /* border: 3px solid white; */
+    color: white;
+    /* box-shadow: 4px 4px 9px rgba(0, 0, 0, 1.8); */
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 1.8);
+    border: 3.5px solid rgba(255, 255, 255, 0.756);
+}
