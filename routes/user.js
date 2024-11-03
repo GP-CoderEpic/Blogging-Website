@@ -21,11 +21,22 @@ router.post('/signup', async (req,res) => {
     });
     return res.redirect('/');
 });
+const express = require('express');
+const app = express();
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+}));
 
 router.post('/signin', async (req,res) => {
     const { email, password } = req.body;
+    const user = await User.findOne({email});
     try {
         const token = await User.matchPasswordAndGenerateToken(email, password);
+        req.session.user = user; 
         return res.cookie('token', token).redirect('/');
     } catch (error) {
         // console.error(error);
@@ -33,8 +44,16 @@ router.post('/signin', async (req,res) => {
     }
 });
 
-router.get('/logout', (req,res) => {
-    res.clearCookie("token").redirect('/');
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error(err);
+            return res.redirect('/'); // Handle error appropriately
+        }
+        res.clearCookie("token"); // Clear the token cookie
+        return res.redirect('/'); // Redirect after logout
+    });
 });
+
 
 module.exports = router;

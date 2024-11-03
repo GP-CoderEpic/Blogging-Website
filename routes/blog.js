@@ -19,10 +19,20 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+const express = require('express');
+const app = express();
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+}));
 
 router.get('/add-new', (req,res) => {
     return res.render('addBlog', {
         user: req.user,
+        user:req.session.user
     });
 });
 
@@ -45,6 +55,7 @@ router.get('/:id', async (req,res) => {
         blog,
         user: req.user,
         comments,
+        user:req.session.user
     });
 });
 

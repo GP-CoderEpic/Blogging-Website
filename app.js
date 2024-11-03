@@ -28,12 +28,21 @@ app.use(cookieParser());
 app.use(checkForAuthenticationCookie('token'));
 app.use(express.static(path.resolve('./public')));
 
+const session = require('express-session');
+
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+}));
 app.get('/', async (req, res) => {
     const allBlogs = await Blog.find({}).sort("createdAt");
+    const user = req.session.user;
     // const name = await User.find({});
     res.render("home", {
         user: req.user,
         blogs: allBlogs,
+        user
     });
 });
 
